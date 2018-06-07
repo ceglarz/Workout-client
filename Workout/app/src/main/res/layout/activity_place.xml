@@ -5,17 +5,8 @@
     android:orientation="vertical"
     tools:context="ceglarz.streetworkout.PlaceActivity">
 
-
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        tools:context=".MapActivity"
-        android:layout_below="@+id/optymalization_menu"/>
-
     <TextView android:id="@+id/name"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"/>
@@ -23,6 +14,17 @@
     <TextView android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"/>
+        android:layout_margin="15dp"/>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginHorizontal="15dp"
+        tools:context=".MapActivity"
+        android:layout_below="@+id/optymalization_menu"/>
+
 
 </LinearLayout>

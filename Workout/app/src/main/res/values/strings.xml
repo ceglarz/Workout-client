@@ -3,10 +3,10 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Ustawienia</string>
-    <string name="starbuzz_logo">Logo StreetWorkout</string>
+    <string name="workout_logo">Logo StreetWorkout</string>
     <string-array name="options">
-        <item>Placyki</item>
-        <item>Trening</item>
+        <item>Place treningowe</item>
+        <item>Treningi</item>
     </string-array>
     <string name="title_activity_place_category">PlaceCategoryActivity</string>
     <string name="title_activity_place">PlaceActivity</string>

@@ -12,6 +12,8 @@ public class DataParser {
         JSONArray placesArray;
         JSONObject placeJObject;
         Place place;
+        double distance;
+        double myLatitude = 51.234396, myLongitude = 22.525969;
 
         try {
             placesArray = new JSONArray(jsonData);
@@ -26,6 +28,8 @@ public class DataParser {
                 place.setDescription(placeJObject.optString("description"));
                 place.setIloscOsob(placeJObject.optInt("active"));
 
+                distance = countDistance(myLatitude, myLongitude, placeJObject.optDouble("latitude"),placeJObject.optDouble("longitude"));
+                place.setOdleglosc(distance);
 
                 foundPlaces.add(place);
             }
@@ -87,4 +91,19 @@ public class DataParser {
         return foundTrainings;
     }
 
-}
+    //liczenie odleglosci na plaskiej Ziemii
+    private double countDistance(double myLatitude, double myLongitude, double latitude, double longitude){
+
+        double earthRadius = 3958.75;
+        double dLat = Math.toRadians(myLatitude- latitude);
+        double dLng = Math.toRadians(myLongitude - longitude);
+        double a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(Math.toRadians(myLatitude)) * Math.cos(Math.toRadians(latitude))
+                        * Math.sin(dLng/2) * Math.sin(dLng/2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        double dist = earthRadius * c;
+        int meterConversion = 1609;
+        return (int)(dist * meterConversion);
+    }
+
+}//koniec klasy

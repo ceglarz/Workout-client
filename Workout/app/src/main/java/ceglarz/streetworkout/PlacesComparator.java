@@ -9,9 +9,10 @@ import java.util.Comparator;
 public class PlacesComparator implements Comparator<Place> {
 
 
+    // Overriding the compare method to sort the distance
     @Override
-    public int compare(Place place1, Place place2) {
-        return 0;
+    public int compare(Place p1, Place p2) {
+        return (int)(p1.getOdleglosc() - p2.getOdleglosc());
     }
 
 }

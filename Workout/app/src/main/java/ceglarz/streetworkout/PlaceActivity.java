@@ -219,7 +219,8 @@ public class PlaceActivity extends FragmentActivity implements OnMapReadyCallbac
         latitude = location.getLatitude();
         longitude = location.getLongitude();
 
-        description.setText(description.getText() +  "\n" + latitude + "\n" + longitude);
+        //description.setText(description.getText() +  "\n" + latitude + "\n" + longitude);
+        description.setText(description.getText());
 
         //stop location updates
         if (mGoogleApiClient != null) {
